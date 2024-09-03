@@ -34,3 +34,80 @@ a {
 .btn:disabled {
     @apply text-neutral-400 bg-neutral-700;
 }
+
+/* Add these styles to your global CSS or in a CSS module */
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Black overlay with transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it's on top of other content */
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%); /* Initially hidden */
+}
+
+.overlay.open {
+    transform: translateX(0); /* Show the overlay */
+}
+
+.overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.overlay li {
+    margin: 1rem 0;
+}
+
+.overlay a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.overlay a:hover {
+    opacity: 0.8;
+}
+
+/* Ensure hamburger menu is only visible on small screens */
+.hamburger-button {
+    display: none;
+}
+
+@media (max-width: 1024px) { /* Adjust the breakpoint as needed */
+    .hamburger-button {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .overlay.open ~ .nav-menu {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) { /* Adjust the breakpoint as needed */
+    .hamburger-button {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+    }
+
+    .overlay {
+        display: none;
+    }
+}
