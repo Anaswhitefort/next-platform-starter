@@ -6,7 +6,7 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
-                'grid-pattern': "linear-gradient(to bottom, theme('colors.black / 100%'), theme('colors.black / 70%')), url('/images/noise.png')"
+                'grid-pattern': "linear-gradient(to bottom, theme('colors.black / 100%'), theme('colors.black / 50%')), url('/images/noise.png')"
             },
             colors: {
                 neutral: colors.neutral
@@ -16,6 +16,7 @@ module.exports = {
             }
         }
     },
+    
     daisyui: {
         themes: [
             {
@@ -32,3 +33,4 @@ module.exports = {
     },
     plugins: [require('daisyui')]
 };
+

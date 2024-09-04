@@ -40,18 +40,11 @@ export default function Page() {
                             <div>Coders</div>
                         </div>
                  </div>
-                <p className="text-lg">Get started with Next.js and Netlify in seconds.</p>
-                <Link
-                    href="https://docs.netlify.com/frameworks/next-js/overview/"
-                    className="btn btn-lg btn-primary sm:btn-wide"
-                >
-                    Read the Docs
-                </Link>
             </section>
 
 
             <section className="flex flex-col gap-4">
-    <RuntimeContextCard /> {/* This stays above the grid */}
+    <RuntimeContextCard /> 
     <div className="mt-8"> 
             <Markdown content={titleExplainer} />
         </div>
@@ -84,47 +77,25 @@ export default function Page() {
 }
 
 function RuntimeContextCard() {
-    const title = `Creative team of ads specialist, content creators and web/app developers, based in Abu Dhabi`;
-    if (ctx === 'dev') {
-        return <Card title={title} text="With years of experience supplying visuals for companies & marketing platforms." />;
-    } else {
-        return <Card title={title} text="Vexa Marketing Agency Abu Dhabi." />;
-    }
+    const title = `Creative team of ads specialists, content creators, and web/app developers, based in Abu Dhabi`;
+    return <Card title={title} text="With years of experience supplying visuals for companies & marketing platforms." />;
 }
-
 function RuntimeDigitalMarketing() {
     const title = `Digital Marketing`;
-    if (ctx === 'dev') {
-        return <Card title={title} text="Specialised in Lead and Sales oriented digital marketing strategies. Tailored to your business expansion goals, we offer Services that seamlessly integrate with your objectives. Through a strategy-first methodology, our experts discern the optimal approach that harmonizes with your business aspirations." />;
-    } else {
-        return <Card title={title} text="Vexa Marketing Agency Abu Dhabi." />;
-    }
-} 
+    return <Card title={title} text="Specialized in Lead and Sales oriented digital marketing strategies. Tailored to your business expansion goals, we offer services that seamlessly integrate with your objectives. Through a strategy-first methodology, our experts discern the optimal approach that harmonizes with your business aspirations." />;
+}
 
 function WebappDesigningDevelopment() {
     const title = `Web/app Designing & Development`;
-    if (ctx === 'dev') {
-        return <Card title={title} text="Our crafted websites fuel conversions, meticulously enhancing user experience to cater to your customers utmost satisfaction. Serving as a pivotal initial interaction for potential leads, the ease of navigation and engagement on your website could spell the distinction between success and setback." />;
-    } else {
-        return <Card title={title} text="Vexa Marketing Agency Abu Dhabi." />;
-    }
-} 
+    return <Card title={title} text="Our crafted websites fuel conversions, meticulously enhancing user experience to cater to your customers' utmost satisfaction. Serving as a pivotal initial interaction for potential leads, the ease of navigation and engagement on your website could spell the distinction between success and setback." />;
+}
 
 function EcommerceOnboarding() {
     const title = `GCC E-commerce Onboarding`;
-    if (ctx === 'dev') {
-        return <Card title={title} text="Expand your business into the GCC market with our expert support. Based in Abu Dhabi, we assist European and UK manufacturers in establishing a strong presence through e-commerce development, marketplace onboarding, inventory management, and targeted marketing for sustainable growth." />;
-    } else {
-        return <Card title={title} text="Vexa Marketing Agency Abu Dhabi." />;
-    }
-} 
+    return <Card title={title} text="Expand your business into the GCC market with our expert support. Based in Abu Dhabi, we assist European and UK manufacturers in establishing a strong presence through e-commerce development, marketplace onboarding, inventory management, and targeted marketing for sustainable growth." />;
+}
 
 function ContentCreationGraphicDesigning() {
     const title = `Content Creation & Graphic Designing`;
-    if (ctx === 'dev') {
-        return <Card title={title} text="Specialised in Lead and Sales oriented digital marketing strategies. Tailored to your business expansion goals, we offer Services that seamlessly integrate with your objectives. Through a strategy-first methodology, our experts discern the optimal approach that harmonizes with your business aspirations." />;
-    } else {
-        return <Card title={title} text="Vexa Marketing Agency Abu Dhabi." />;
-    }
-} 
-
+    return <Card title={title} text="Specialized in Lead and Sales oriented digital marketing strategies. Tailored to your business expansion goals, we offer services that seamlessly integrate with your objectives. Through a strategy-first methodology, our experts discern the optimal approach that harmonizes with your business aspirations." />;
+}
