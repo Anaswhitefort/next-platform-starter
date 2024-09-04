@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Markdown } from 'components/markdown';
 import { getNetlifyContext } from 'utils';
 import { ImageWithSizeOverlay } from './image-with-size-overlay';
-import { ContextAlert } from 'components/context-alert';
+import { Card } from 'components/card';
 
 export const metadata = {
     title: 'Image CDN'
@@ -27,6 +27,9 @@ import Image from 'next/image';
 // In your component
 <Image src="/images/corgi.jpg" alt="Corgi" /* ... additional props */ />
 ~~~
+`;
+const creativeContents = `Creatives & Content Production
+
 `;
 
 const originalVsCdnSnippet = `
@@ -55,39 +58,40 @@ export default function Page() {
     return (
         <div className="flex flex-col gap-6 sm:gap-12">
             <section className="flex flex-col items-start gap-6 sm:gap-8">
-                <ContextAlert addedChecksFunction={
-                    (ctx) => {
-                        return ctx === "dev" ? devModeWarning : null;
-                    }
-                } />
-                <h1 className="mb-0">Image CDN</h1>
+                <div className="design flex justify-center">
+                        We do &nbsp;
+                        <div className="droppingTexts">
+                        <div>AI Content</div> 
+                        <div>script</div>   
+                        <div>shoot</div>  
+                        <div>create</div>
+                        <div>edit</div>
+                        <div>manage your socials</div>
+                        </div>
+                 </div>
             </section>
             <section>
-                <h2 className="mb-4 text-2xl font-bold sm:text-3xl">Using next/image component</h2>
-                <Markdown content={nextImageSnippet} />
-                <div
-                    className="mt-8 overflow-hidden border-2 border-white rounded-lg relative max-w-screen-lg"
-                    style={{ aspectRatio: '3/2' }}
-                >
+
+                <section className="flex flex-col gap-4">
+                    <div className="mt-8"> 
+                    <Card title={creativeContents} text="Specialised in Lead and Sales oriented digital marketing strategies. Tailored to your business expansion goals, we offer Services that seamlessly integrate with your objectives. Through a strategy-first methodology, our experts discern the optimal approach that harmonizes with your business aspirations." />
+                    </div>
+                </section>
+
+                
+                <div className="mt-20 overflow-hidden border-2 border-white rounded-lg relative max-w-screen-lg"
+                    style={{ aspectRatio: '3/1.6' }}>
+
                     <Image
-                        src="/images/corgi.jpg"
+                        src="/images/Creatives-01_from_vexa_digital_marketing_agency_abu_dhabi.jpg"
                         priority
                         fill={true}
                         style={{ objectFit: 'contain' }}
                         sizes="(max-width: 1024px) 100vw, 1024px"
-                        alt="Corgi"
+                        alt="Creative 01 from vexa digital marketing agency abu dhabi"
                     />
+    
                 </div>
-                <span className="text-sm italic">
-                    Credit: photo by{' '}
-                    <a href="https://unsplash.com/@alvannee?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-                        Alvan Nee
-                    </a>{' '}
-                    on{' '}
-                    <a href="https://unsplash.com/photos/long-coated-white-and-brown-dog-lvFlpqEvuRM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-                        Unsplash
-                    </a>
-                </span>
             </section>
 
             <section>
@@ -116,3 +120,4 @@ export default function Page() {
         </div>
     );
 }
+

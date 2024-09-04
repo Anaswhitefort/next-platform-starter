@@ -10,7 +10,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 const navItems = [
     { linkText: 'Home', href: '/' },
     { linkText: 'Revalidation', href: '/revalidation' },
-    { linkText: 'Image CDN', href: '/image-cdn' },
+    { linkText: 'Creatives', href: '/creative-content-creation' },
     { linkText: 'Edge Function', href: '/edge' },
     { linkText: 'Blobs', href: '/blobs' },
     { linkText: 'Classics', href: '/classics' }
@@ -44,7 +44,7 @@ export function Header() {
                         <li key={index}>
                             <Link
                                 href={item.href}
-                                className="inline-block px-1.5 py-1 transition hover:opacity-80 sm:px-3 sm:py-2"
+                                className="inline-block px-1.5 py-1 transition hover:opacity-80 sm:px-3 sm:py-2 text-lg font-bold h-6"
                             >
                                 {item.linkText}
                             </Link>
@@ -63,9 +63,9 @@ export function Header() {
                 </div>
             </nav>
 
-            {/* Overlay */}
-            <div className={`overlay ${menuOpen ? 'open' : ''}`}>
-                <button onClick={toggleMenu} className="absolute top-4 right-4 text-2xl text-white">
+            {/* Overlay with Background Pattern */}
+            <div className={`overlay bg-grid-pattern ${menuOpen ? 'open' : ''}`}>
+                <button onClick={toggleMenu} className="absolute top-4 right-4 text-white text-lg font-bold h-6">
                     <FiX />
                 </button>
                 <ul>
@@ -73,7 +73,7 @@ export function Header() {
                         <li key={index}>
                             <Link
                                 href={item.href}
-                                className="inline-block px-1.5 py-1 transition hover:opacity-80"
+                                className="inline-block px-1.5 py-1 transition hover:opacity-80 text-lg font-bold h-6 "
                                 onClick={() => setMenuOpen(false)}
                             >
                                 {item.linkText}
