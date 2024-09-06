@@ -48,17 +48,17 @@ export default function Page() {
     <div className="mt-8"> 
             <Markdown content={titleExplainer} />
         </div>
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2"> {/* Grid layout starts here */}
-        <div className="mt-4"> 
+    <div className="grid grid-cols-1 gap-2 md:grid-cols-2"> {/* Grid layout starts here */}
+        <div className="mt-2"> 
             <RuntimeDigitalMarketing />
         </div>
-        <div className="mt-4"> 
+        <div className="mt-2"> 
             <WebappDesigningDevelopment />
         </div>
-        <div className="mt-4"> 
+        <div className="mt-2"> 
             <EcommerceOnboarding />
         </div>
-        <div className="mt-4"> 
+        <div className="mt-2"> 
             <ContentCreationGraphicDesigning />
         </div>
     </div>

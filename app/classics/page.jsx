@@ -26,6 +26,7 @@ export default async function Page() {
             <div className="flex w-full pt-12 justify-center">
                 <FeedbackForm />
             </div>
+            
         </>
     );
 }

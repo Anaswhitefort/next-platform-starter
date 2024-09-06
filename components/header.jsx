@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import vexaLogo from 'public/vexa-logo-svg.svg';
+import vexaLogo from 'public/vexa-logo.svg';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { FaInstagram, FaFacebookF, FaTiktok, FaSnapchatGhost, FaLinkedinIn } from 'react-icons/fa';
 import Head from 'next/head';
@@ -153,7 +153,7 @@ export function Header() {
             {/* Centered Logo */}
             <div className="flex-grow flex justify-center items-center">
                 <Link href="/">
-                    <Image src={vexaLogo} alt="Netlify logo" />
+                    <Image src={vexaLogo} alt="Vexa Marketing Agency ABu Dhabi logo" />
                 </Link>
             </div>
 
@@ -227,6 +227,7 @@ export function Header() {
                 
                 </div>
             </div>
+            <div className={`${menuOpen ? 'fixed inset-0 backdrop-blur-sm z-40' : ''}`}></div>
         </>
     );
 }
