@@ -4,6 +4,9 @@ import { RandomQuote } from 'components/random-quote';
 import { Markdown } from 'components/markdown';
 import { ContextAlert } from 'components/context-alert';
 import { getNetlifyContext } from 'utils';
+import { CardImgText } from 'components/card-img-text';
+import { CardImgTextBuild } from 'components/card-img-text-build';
+import  BrandList  from 'components/brand-list';
 const cards = [
     //{ text: 'Hello', linkText: 'someLink', href: '/' }
 ];
@@ -41,28 +44,35 @@ export default function Page() {
                         </div>
                  </div>
             </section>
-
+  
 
             <section className="flex flex-col gap-4">
-    <RuntimeContextCard /> 
-    <div className="mt-8"> 
-            <Markdown content={titleExplainer} />
-        </div>
-    <div className="grid grid-cols-1 gap-2 md:grid-cols-2"> {/* Grid layout starts here */}
-        <div className="mt-2"> 
-            <RuntimeDigitalMarketing />
-        </div>
-        <div className="mt-2"> 
-            <WebappDesigningDevelopment />
-        </div>
-        <div className="mt-2"> 
-            <EcommerceOnboarding />
-        </div>
-        <div className="mt-2"> 
-            <ContentCreationGraphicDesigning />
-        </div>
-    </div>
-</section>
+                    <RuntimeContextCard /> 
+                    <div className="mt-8"> 
+                            <Markdown content={titleExplainer} />
+                        </div>
+                    <div className="grid grid-cols-1 gap-2 md:grid-cols-2"> {/* Grid layout starts here */}
+                        <div className="mt-2"> 
+                            <RuntimeDigitalMarketing />
+                        </div>
+                        <div className="mt-2"> 
+                            <WebappDesigningDevelopment />
+                        </div>
+                        <div className="mt-2"> 
+                            <EcommerceOnboarding />
+                        </div>
+                        <div className="mt-2"> 
+                            <ContentCreationGraphicDesigning />
+                        </div>
+                    </div>
+            </section>
+
+            <section className="my-6">
+                <CardImgText />
+            </section>
+            <section className="my-6">
+                <CardImgTextBuild />
+            </section>
 
 
 
@@ -72,6 +82,68 @@ export default function Page() {
                 <Markdown content={postDynamicContentExplainer} />
             </section>
             {/* !!cards?.length && <CardsGrid cards={cards} /> */}
+
+           
+
+ <div class="container mx-auto py-2 lg:pt-24">
+  <div class="-m-1 flex flex-wrap md:-m-2">
+    <div class="flex w-1/2 flex-wrap">
+      <div class="w-1/2 p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="/images/Vexa-Marketing-agency-Abu-Dhabi-20.jpg" />
+      </div>
+      <div class="w-1/2 p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="/images/Vexa-Marketing-agency-Abu-Dhabi-21.jpg" />
+      </div>
+      <div class="w-full p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="/images/Vexa-Marketing-agency-Abu-Dhabi-03.jpg" />
+      </div>
+    </div>
+    <div class="flex w-1/2 flex-wrap">
+      <div class="w-full p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="/images/Vexa-Marketing-agency-Abu-Dhabi-04.jpg" />
+      </div>
+      <div class="w-1/2 p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="/images/Vexa-Marketing-agency-Abu-Dhabi-11.jpg" />
+      </div>
+      <div class="w-1/2 p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="/images/Vexa-Marketing-agency-Abu-Dhabi-12.jpg" />
+      </div>
+      <div class="w-1/2 p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="/images/Vexa-Marketing-agency-Abu-Dhabi-13.jpg" />
+      </div>
+            <div class="w-1/2 p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="/images/Vexa-Marketing-agency-Abu-Dhabi-14.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+<section className="my-12">
+                <BrandList />
+            </section>
         </main>
     );
 }

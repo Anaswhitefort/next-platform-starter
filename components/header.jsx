@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import vexaLogo from 'public/vexa-logo.svg';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX, FiArrowLeft } from 'react-icons/fi';
 import { FaInstagram, FaFacebookF, FaTiktok, FaSnapchatGhost, FaLinkedinIn } from 'react-icons/fa';
 import Head from 'next/head';
 
@@ -12,6 +12,13 @@ const navItems = [
     { linkText: 'Home', href: '/' },
     { linkText: 'Revalidation', href: '/revalidation' },
     { linkText: 'Creatives', href: '/creative-content-creation' },
+    { 
+        linkText: 'Case Studies ->', 
+        href: '/case-studies',
+        subItems: [
+            { linkText: 'Ecommerce Marketing', href: '/case-studies/ecommerce-marketing' }
+        ]
+    },
     { linkText: 'Edge Function', href: '/edge' },
     { linkText: 'Blobs', href: '/blobs' },
     { linkText: 'Classics', href: '/classics' }
@@ -19,6 +26,7 @@ const navItems = [
 
 export function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [showSubMenu, setShowSubMenu] = useState(false);  // New state for sub-navigation
     const overlayRef = useRef(null);
 
     const toggleMenu = () => {
@@ -142,72 +150,83 @@ export function Header() {
                 />
             </Head>
   
-        <nav className="flex items-center justify-between pt-6 pb-12 sm:pt-12 md:pb-24 relative">
-            {/* Hamburger Button */}
-            <button onClick={toggleMenu} className="hamburger-button text-2xl absolute left-0 top-1/2"
-                style={{ transform: 'translateY(-100%)' }}
->
-                {menuOpen ? <FiX /> : <FiMenu />}
-            </button>
-
-            {/* Centered Logo */}
-            <div className="flex-grow flex justify-center items-center">
-                <Link href="/">
-                    <Image src={vexaLogo} alt="Vexa Marketing Agency ABu Dhabi logo" />
-                </Link>
-            </div>
-
-        {/* Call Us Button */}
-        <a
-            href="tel:+971563901109"
-            className="bg-[#35cbee] text-white px-4 py-2 rounded-lg font-semibold flex items-center ml-4 no-underline"
-        >
-            Call us
-        </a>
-
-
-            {/* Regular Navigation Menu (hidden on small screens) */}
-            <ul className="nav-menu flex flex-wrap gap-x-4 gap-y-1 lg:flex lg:items-center lg:gap-4 hidden lg:flex">
-                {navItems.map((item, index) => (
-                    <li key={index}>
-                        <Link
-                            href={item.href}
-                            className="inline-block px-1.5 py-1 transition hover:opacity-80 sm:px-3 sm:py-2 text-lg font-bold h-6"
-                        >
-                            {item.linkText}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </nav>
-
-
-            {/* Overlay with Background Pattern */}
-            <div
-                ref={overlayRef}
-                className={`overlay bg-grid-pattern ${menuOpen ? 'open' : ''}`}
-            >
-                {/* Hamburger Button inside Overlay */}
-                <button onClick={toggleMenu} className="absolute left-4 top-4 text-white text-lg font-bold">
-                    <FiX />
+            <nav className="flex items-center justify-between pt-6 pb-12 sm:pt-12 md:pb-24 relative">
+                <button onClick={toggleMenu} className="hamburger-button text-2xl absolute left-0 top-1/2" style={{ transform: 'translateY(-100%)' }}>
+                    {menuOpen ? <FiX /> : <FiMenu />}
                 </button>
-                
-                {/* Navigation Menu in Overlay */}
-                <ul className="flex flex-col items-start mt-16">
+
+                <div className="flex-grow flex justify-center items-center">
+                    <Link href="/">
+                        <Image src={vexaLogo} alt="Vexa Marketing Agency Abu Dhabi logo" />
+                    </Link>
+                </div>
+
+                <a href="tel:+971563901109" className="bg-[#35cbee] text-white px-4 py-2 rounded-lg font-semibold flex items-center ml-4 no-underline">
+                    Call us
+                </a>
+
+                <ul className="nav-menu flex flex-wrap gap-x-4 gap-y-1 lg:flex lg:items-center lg:gap-4 hidden lg:flex">
                     {navItems.map((item, index) => (
                         <li key={index}>
                             <Link
                                 href={item.href}
-                                className="inline-block px-1.5 py-1 transition hover:opacity-80 text-lg font-bold h-6"
-                                onClick={() => setMenuOpen(false)}
+                                className="inline-block px-1.5 py-1 transition hover:opacity-80 sm:px-3 sm:py-2 text-lg font-bold h-6"
+                                onClick={() => item.subItems ? setShowSubMenu(true) : null}  // Show sub-menu if available
                             >
                                 {item.linkText}
                             </Link>
                         </li>
                     ))}
                 </ul>
+            </nav>
 
-                {/* Social Media Icons */}
+            <div ref={overlayRef} className={`overlay bg-grid-pattern ${menuOpen ? 'open' : ''}`}>
+                {showSubMenu ? (
+                    <>
+                        {/* Back to Main Navigation Button */}
+                        <button onClick={() => setShowSubMenu(false)} className="absolute left-4 top-4 text-white text-lg font-bold">
+                            <FiArrowLeft /> Back
+                        </button>
+
+                        {/* Sub Navigation for Case Studies */}
+                        <ul className="flex flex-col items-start mt-16">
+                            {navItems.find(item => item.linkText === 'Case Studies ->').subItems.map((subItem, index) => (
+                                <li key={index}>
+                                    <Link
+                                        href={subItem.href}
+                                        className="inline-block px-1.5 py-1 transition hover:opacity-80 text-lg font-bold h-6"
+                                        onClick={() => setMenuOpen(false)}  // Close the menu when a sub-item is clicked
+                                    >
+                                        {subItem.linkText}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                ) : (
+                    <>
+                        {/* Hamburger Button inside Overlay */}
+                        <button onClick={toggleMenu} className="absolute left-4 top-4 text-white text-lg font-bold">
+                            <FiX />
+                        </button>
+
+                        {/* Main Navigation Menu in Overlay */}
+                        <ul className="flex flex-col items-start mt-16">
+                            {navItems.map((item, index) => (
+                                <li key={index}>
+                                    <Link
+                                        href={item.href}
+                                        className="inline-block px-1.5 py-1 transition hover:opacity-80 text-lg font-bold h-6"
+                                        onClick={() => item.subItems ? setShowSubMenu(true) : setMenuOpen(false)}  // Handle sub-menu toggle
+                                    >
+                                        {item.linkText}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                )}
+
                 <div className="absolute bottom-4 right-4 flex space-x-3 text-white">
                     <a href="https://www.facebook.com/vexauae" target="_blank" rel="noopener noreferrer">
                         <FaFacebookF className="text-xl" />
@@ -224,9 +243,9 @@ export function Header() {
                     <a href="https://www.instagram.com/vexa.ae" target="_blank" rel="noopener noreferrer">
                         <FaInstagram className="text-xl" />
                     </a>
-                
                 </div>
             </div>
+
             <div className={`${menuOpen ? 'fixed inset-0 backdrop-blur-sm z-40' : ''}`}></div>
         </>
     );

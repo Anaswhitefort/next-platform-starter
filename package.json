@@ -13,7 +13,7 @@
         "blobshape": "^1.0.0",
         "bright": "^0.8.5",
         "markdown-to-jsx": "^7.4.5",
-        "netlify-cli": "^17.35.0",
+        "netlify-cli": "^17.36.0",
         "next": "14.2.7",
         "react": "18.3.1",
         "react-dom": "18.3.1",
