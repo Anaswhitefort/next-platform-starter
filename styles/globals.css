@@ -35,6 +35,17 @@ a {
     @apply text-neutral-400 bg-neutral-700;
 }
 
+@layer base {
+    .dark {
+        @apply bg-dark-bg text-dark-text;
+    }
+}
+
+@layer components {
+    .dark .btn {
+        @apply bg-gray-700 text-white;
+    }
+}
 
 .overlay {
     position: fixed;

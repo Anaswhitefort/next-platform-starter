@@ -38,11 +38,31 @@ export default function Page() {
   
 
             <section className="flex flex-col gap-4">
-                    <RuntimeContextCard /> 
-                    <div className="mt-8"> 
-                            <Markdown content={titleExplainer} />
-                        </div>
-                    <div className="grid grid-cols-1 gap-2 md:grid-cols-2"> {/* Grid layout starts here */}
+<h2
+  className="text-white lg:text-5xl text-3xl font-bold lg:!leading-[56px]"
+  style={{
+    backgroundImage: 'linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.6))',
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',  // Fallback for non-webkit browsers
+    color: 'transparent'
+  }}
+>
+Vexa, a creative team of Ad Specialists, Content Creators, and Web/app Developers based in Abu Dhabi</h2>
+<p
+  className="text-white text-s"
+  style={{
+    backgroundImage: 'linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.6))',
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',  // Fallback for non-webkit browsers
+    color: 'transparent'
+  }}
+>
+With years of experience supplying visuals for companies & marketing platforms.
+Unlock the process with benefits you wouldn’t want to lose:
+</p>
+                    
+               
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 mt-20"> {/* Grid layout starts here */}
                         <div className="mt-2"> 
                             <RuntimeDigitalMarketing />
                         </div>
@@ -59,7 +79,7 @@ export default function Page() {
             </section>
 
 
-            <section className="my-6">
+            <section className="my-6 mt-20">
                 <OfficialShopifyPartner />
             </section>
 
@@ -134,7 +154,7 @@ export default function Page() {
 }
 
 function RuntimeContextCard() {
-    const title = `Creative team of ads specialists, content creators, and web/app developers, based in Abu Dhabi`;
+    const title = `Creative team of Ad Specialists, Content Creators, and Web/app Developers, based in Abu Dhabi`;
     return <Card title={title} text="With years of experience supplying visuals for companies & marketing platforms." />;
 }
 function RuntimeDigitalMarketing() {
