@@ -1,28 +1,19 @@
 import Link from 'next/link';
 import { Card } from 'components/card';
-import { RandomQuote } from 'components/random-quote';
 import { Markdown } from 'components/markdown';
 import { ContextAlert } from 'components/context-alert';
 import { getNetlifyContext } from 'utils';
-import { CardImgText } from 'components/card-img-text';
-import { CardImgTextBuild } from 'components/card-img-text-build';
+import { OfficialShopifyPartner } from 'components/official-shopify-partner';
+import { StoreBuildForConversion } from 'components/store-build-for-conversion';
 import  BrandList  from 'components/brand-list';
 const cards = [
     //{ text: 'Hello', linkText: 'someLink', href: '/' }
 ];
 
 
-const preDynamicContentExplainer = `
-The card content below is fetched by the client-side from \`/quotes/random\` (see file \`app/quotes/random/route.js\`) with a different quote shown on each page load:
-`;
+
 const titleExplainer = `Unlock the process with benefits you wouldn’t want to lose:`;
 
-const postDynamicContentExplainer = `
-On Netlify, Next.js Route Handlers are automatically deployed as [Serverless Functions](https://docs.netlify.com/functions/overview/).
-Alternatively, you can add Serverless Functions to any site regardless of framework, with acccess to the [full context data](https://docs.netlify.com/functions/api/).
-
-And as always with dynamic content, beware of layout shifts & flicker! (here, we aren't...)
-`;
 
 const ctx = getNetlifyContext();
 
@@ -67,22 +58,16 @@ export default function Page() {
                     </div>
             </section>
 
+
             <section className="my-6">
-                <CardImgText />
+                <OfficialShopifyPartner />
             </section>
+
             <section className="my-6">
-                <CardImgTextBuild />
+                <StoreBuildForConversion />
             </section>
 
-
-
-            <section className="flex flex-col gap-4">
-                <Markdown content={preDynamicContentExplainer} />
-                <RandomQuote />
-                <Markdown content={postDynamicContentExplainer} />
-            </section>
-            {/* !!cards?.length && <CardsGrid cards={cards} /> */}
-
+          
            
 
  <div class="container mx-auto py-2 lg:pt-24">
