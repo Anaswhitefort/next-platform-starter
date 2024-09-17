@@ -8,7 +8,7 @@ export function OfficialShopifyPartner() {
             <div className="grid lg:grid-cols-2 items-center lg:gap-y-6 bg-black">
                 <div className="max-lg:order-1 max-lg:text-left sm:p-12 p-4">
                     <h2
-                        className="text-white lg:text-5xl text-3xl font-bold lg:!leading-[56px]"
+                        className="bg-blend-lighten md:bg-blend-darken text-white lg:text-5xl text-3xl font-bold lg:!leading-[56px]"
                         style={{
                             backgroundImage: 'linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.6))',
                             WebkitBackgroundClip: 'text',
