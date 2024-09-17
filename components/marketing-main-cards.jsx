@@ -22,7 +22,7 @@ export function MarketingMainCards() {
                 >
                     <h3 className="text-lg font-bold mb-2 text-white">Web/app Designing & Development</h3>
                     <p className="text-sm text-white">
-                    Our crafted websites fuel conversions, meticulously enhancing user experience to cater to your customers' utmost satisfaction. Serving as a pivotal initial interaction for potential leads, the ease of navigation and engagement on your website could spell the distinction between success and setback.</p>
+                    Our crafted websites fuel conversions, meticulously enhancing user experience to cater to the clients satisfaction. Serving as a pivotal initial interaction for potential leads, the ease of navigation and engagement on your website could spell the distinction between success and setback.</p>
                 </div>
 
                 <div
