@@ -10,6 +10,7 @@ import Head from 'next/head';
 
 const navItems = [
     { linkText: 'Home', href: '/' },
+    { linkText: 'Shopify Development', href: '/shopify-developer-abudhabi' },
     { linkText: 'Revalidation', href: '/revalidation' },
     { linkText: 'Creatives', href: '/creative-content-creation' },
     { 
@@ -19,14 +20,15 @@ const navItems = [
             { linkText: 'Ecommerce Marketing', href: '/case-studies/ecommerce-marketing' }
         ]
     },
-    { linkText: 'Edge Function', href: '/edge' },
     { linkText: 'Blobs', href: '/blobs' },
     { linkText: 'Classics', href: '/classics' }
 ];
 
 export function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [showSubMenu, setShowSubMenu] = useState(false);  // New state for sub-navigation
+    const [showSubMenu, setShowSubMenu] = useState(false);
+    const [lastScrollTop, setLastScrollTop] = useState(0);
+    const [sticky, setSticky] = useState(false);
     const overlayRef = useRef(null);
 
     const toggleMenu = () => {
@@ -39,6 +41,18 @@ export function Header() {
         }
     };
 
+    const handleScroll = () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            setSticky(false);
+        } else {
+            // Scrolling up
+            setSticky(true);
+        }
+        setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
+    };
+
     useEffect(() => {
         if (menuOpen) {
             document.addEventListener('mousedown', handleClickOutside);
@@ -46,12 +60,15 @@ export function Header() {
             document.removeEventListener('mousedown', handleClickOutside);
         }
 
+        window.addEventListener('scroll', handleScroll);
+
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
+            window.removeEventListener('scroll', handleScroll);
         };
-    }, [menuOpen]);
+    }, [menuOpen, lastScrollTop]);
 
-    return (
+    return  (
         <>
             <Head>
                 <title>Digital Marketing Agency in Abu Dhabi | Vexa</title>
@@ -150,18 +167,20 @@ export function Header() {
                 />
             </Head>
   
-            <nav className="flex items-center justify-between pt-6 pb-12 sm:pt-12 md:pb-24 relative">
-                <button onClick={toggleMenu} className="hamburger-button text-2xl absolute left-0 top-1/2" style={{ transform: 'translateY(-100%)' }}>
+            <nav
+  className={`flex items-center justify-between pt-4 pb-4 sm:pt-6 md:pb-15 relative rounded-[15px] border border-white ${sticky ? 'sticky top-0 z-10 bg-black' : ''}`}
+>
+            <button onClick={toggleMenu} className="hamburger-button text-3xl mt-4 ml-4 absolute left-0 top-1/2" style={{ transform: 'translateY(-100%)' }}>
                     {menuOpen ? <FiX /> : <FiMenu />}
                 </button>
 
-                <div className="flex-grow flex justify-center items-center">
+                <div className="flex-grow flex justify-center items-center ml-20">
                     <Link href="/">
                         <Image src={vexaLogo} alt="Vexa Marketing Agency Abu Dhabi logo" />
                     </Link>
                 </div>
 
-                <a href="tel:+971563901109" className="bg-[#35cbee] text-white px-4 py-2 rounded-lg font-semibold flex items-center ml-4 no-underline">
+                <a href="tel:+971563901109" className="bg-[#35cbee] text-white px-4 py-2 mr-4 rounded-lg font-semibold flex items-center ml-4 no-underline">
                     Call us
                 </a>
 
@@ -170,8 +189,8 @@ export function Header() {
                         <li key={index}>
                             <Link
                                 href={item.href}
-                                className="inline-block px-1.5 py-1 transition hover:opacity-80 sm:px-3 sm:py-2 text-lg font-bold h-6"
-                                onClick={() => item.subItems ? setShowSubMenu(true) : null}  // Show sub-menu if available
+                                className="inline-block px-1.5 py-1 transition hover:opacity-80 sm:px-3 sm:py-2 text-lg font-bold h-6 no-underline"
+                                onClick={() => item.subItems ? setShowSubMenu(true) : null}
                             >
                                 {item.linkText}
                             </Link>
@@ -183,19 +202,17 @@ export function Header() {
             <div ref={overlayRef} className={`overlay bg-grid-pattern ${menuOpen ? 'open' : ''}`}>
                 {showSubMenu ? (
                     <>
-                        {/* Back to Main Navigation Button */}
                         <button onClick={() => setShowSubMenu(false)} className="absolute left-4 top-4 text-white text-lg font-bold">
                             <FiArrowLeft /> Back
                         </button>
 
-                        {/* Sub Navigation for Case Studies */}
                         <ul className="flex flex-col items-start mt-16">
                             {navItems.find(item => item.linkText === 'Case Studies ->').subItems.map((subItem, index) => (
                                 <li key={index}>
                                     <Link
                                         href={subItem.href}
                                         className="inline-block px-1.5 py-1 transition hover:opacity-80 text-lg font-bold h-6"
-                                        onClick={() => setMenuOpen(false)}  // Close the menu when a sub-item is clicked
+                                        onClick={() => setMenuOpen(false)}
                                     >
                                         {subItem.linkText}
                                     </Link>
@@ -205,19 +222,17 @@ export function Header() {
                     </>
                 ) : (
                     <>
-                        {/* Hamburger Button inside Overlay */}
-                        <button onClick={toggleMenu} className="absolute left-4 top-4 text-white text-lg font-bold">
+                        <button onClick={toggleMenu} className="absolute left-8 top-8 text-white text-lg font-bold">
                             <FiX />
                         </button>
 
-                        {/* Main Navigation Menu in Overlay */}
                         <ul className="flex flex-col items-start mt-16">
                             {navItems.map((item, index) => (
                                 <li key={index}>
                                     <Link
                                         href={item.href}
                                         className="inline-block px-1.5 py-1 transition hover:opacity-80 text-lg font-bold h-6"
-                                        onClick={() => item.subItems ? setShowSubMenu(true) : setMenuOpen(false)}  // Handle sub-menu toggle
+                                        onClick={() => item.subItems ? setShowSubMenu(true) : setMenuOpen(false)}
                                     >
                                         {item.linkText}
                                     </Link>
@@ -227,8 +242,8 @@ export function Header() {
                     </>
                 )}
 
-                <div className="absolute bottom-4 right-4 flex space-x-3 text-white">
-                    <a href="https://www.facebook.com/vexauae" target="_blank" rel="noopener noreferrer">
+            <div className="absolute bottom-4 right-4 flex space-x-3 text-white">
+            <a href="https://www.facebook.com/vexauae" target="_blank" rel="noopener noreferrer">
                         <FaFacebookF className="text-xl" />
                     </a>
                     <a href="https://www.snapchat.com/add/vexa.ae" target="_blank" rel="noopener noreferrer">

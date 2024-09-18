@@ -1,11 +1,23 @@
-'use client';  // Very top of the file
+'use client';  
 
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 export function OfficialShopifyPartner() {
+    const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.2 });
+    const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.2 });
+    const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.2 });
+    const [ref4, inView4] = useInView({ triggerOnce: true, threshold: 0.2 });
+    const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.2 });
+
     return (
         <div className="font-sans">
-            <div className="grid lg:grid-cols-2 items-center lg:gap-y-6 bg-black">
+           <div
+                ref={ref1}
+                className={`grid lg:grid-cols-2 items-center lg:gap-y-6 bg-black transform transition-all duration-700 ${
+                    inView1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+            >
                 <div className="max-lg:order-1 max-lg:text-left sm:p-12 p-4">
                     <h2
                         className="bg-blend-lighten md:bg-blend-darken text-white lg:text-5xl text-3xl font-bold lg:!leading-[56px]"
@@ -39,8 +51,11 @@ export function OfficialShopifyPartner() {
             </div>
 
             <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 px-4 my-12">
-                <div
-                    className="bg-black p-6 rounded-[15px] border border-white"
+            <div
+                    ref={ref2}
+                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                        inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                    }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
                 >
                     <svg
@@ -68,7 +83,10 @@ export function OfficialShopifyPartner() {
                 </div>
 
                 <div
-                    className="bg-black p-6 rounded-[15px] border border-white"
+                    ref={ref3}
+                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                        inView3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                    }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
                 >
                     <svg
@@ -87,7 +105,10 @@ export function OfficialShopifyPartner() {
                 </div>
 
                 <div
-                    className="bg-black p-6 rounded-[15px] border border-white"
+                    ref={ref4}
+                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                        inView4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                    }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
                 >
                     <svg
@@ -123,7 +144,10 @@ export function OfficialShopifyPartner() {
                 </div>
 
                 <div
-                    className="bg-black p-6 rounded-[15px] border border-white"
+                    ref={ref5}
+                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                        inView5 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                    }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
                 >
                     <svg

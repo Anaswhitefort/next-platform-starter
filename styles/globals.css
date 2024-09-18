@@ -3,10 +3,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root, [data-theme] {
+  background-color: black;
+}
 
 @layer base {
     :not(pre) > code {
-        @apply px-1 py-0.5 font-mono rounded bg-neutral-900 text-yellow-200;
+        @apply px-1 py-0.5 font-mono rounded bg-black text-yellow-200;
         font-size: 0.9em;
     }
 
@@ -48,20 +51,23 @@ a {
 }
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0; /* Changed from right to left */
-    width: 70%;
-    height: 100%;
-    background: black;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    z-index: 1000;
-    transition: transform 0.3s ease-in-out;
-    transform: translate(-100%); /* Initially hidden, change to -100% */
-    background-image: linear-gradient(to bottom, rgb(10 10 10 / 0%), rgb(10 10 10 / 100%)), url(/images/noise.png);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  transform: translate(-100%);
+  background-image: linear-gradient(to bottom, rgb(10 10 10 / 0%), rgb(10 10 10 / 100%)), url(/images/noise.png);
+  border: 1px solid white; 
+  border-radius: 15px;
 }
+
 
 .overlay.open {
     transform: translateX(0); /* Slide in from the left */
