@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import { dark } from 'daisyui/src/theming/themes';
 
 export function StoreBuildForConversion() {
     const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -14,7 +15,7 @@ export function StoreBuildForConversion() {
         <div className="font-sans">
             <div
                 ref={ref1}
-                className={`grid lg:grid-cols-2 items-center lg:gap-y-6 bg-black transform transition-all duration-700 ${
+                className={`grid lg:grid-cols-2 items-center lg:gap-y-6 bg-transparent transform transition-all duration-700 ${
                     inView1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
             >
@@ -22,20 +23,22 @@ export function StoreBuildForConversion() {
                     <h2
                         className="text-white lg:text-5xl text-3xl font-bold lg:!leading-[56px]"
                         style={{
-                            backgroundImage: 'linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.6))',
-                            WebkitBackgroundClip: 'text',
-                            backgroundClip: 'text',  // Fallback for non-webkit browsers
-                            color: 'transparent'
-                        }}
+                          backgroundImage: dark
+                              ? 'linear-gradient(to bottom, #000, #524f4f, rgba(255, 255, 255, 0.6))'
+                              : 'linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.6))',
+                          WebkitBackgroundClip: 'text',
+                          backgroundClip: 'text',  // Fallback for non-webkit browsers
+                          color: 'transparent',
+                      }}
                     >
                         We Build Store For Conversion
                     </h2>
-                    <p className="text-white mt-6 text-base leading-relaxed">
+                    <p className="text-white dark:text-black mt-6 text-base leading-relaxed">
                         We build stores designed for optimal conversion, offering comprehensive development and digital marketing support. Our focus is on creating effective, high-converting online stores tailored to your business needs.
                     </p>
                     <button
                         type="button"
-                        className="bg-transparent border-2 border-white mt-12 transition-all text-white font-bold text-sm rounded-[10px] px-6 py-2.5"
+                        className="bg-transparent border-2 border-white dark:border-black mt-12 transition-all text-white dark:text-black font-bold text-sm rounded-[10px] px-6 py-2.5"
                     >
                         Read More
                     </button>
@@ -53,7 +56,7 @@ export function StoreBuildForConversion() {
             <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 px-4 my-12">
             <div
                     ref={ref2}
-                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                    className={`bg-transparent p-6 rounded-[15px] border border-white dark:border-black transform transition-all duration-700 ${
                         inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
@@ -72,14 +75,14 @@ export function StoreBuildForConversion() {
                             <path d="m230.748,133c0.007,0 0.013,0 0.02,0 36.717,0 66.484-29.765 66.495-66.482 0.009-36.724-29.754-66.518-66.479-66.518 0,0-0.012,0-0.019,0-36.717,0-66.485,29.765-66.495,66.482-0.012,36.724 29.752,66.518 66.478,66.518zm-21.758-72.162l12.631,12.632 30.922-30.922 11.314,11.314-42.236,42.234-23.946-23.946 11.315-11.312z"/>
                         </g>
                     </svg>
-                    <h3 className="text-lg font-bold mb-2 text-white">Landing page that converts</h3>
-                    <p className="text-sm text-white">
+                    <h3 className="text-lg font-bold mb-2 text-white dark:text-black">Landing page that converts</h3>
+                    <p className="text-sm text-white dark:text-black">
                         Regardless of your business or products, we design custom landing pages that enhance the customer conversion journey with engaging product pages and compelling CTAs, boosting your store’s effectiveness and appeal.
                     </p>
                 </div>
                 <div
                     ref={ref3}
-                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                    className={`bg-transparent p-6 rounded-[15px] border border-white dark:border-black transform transition-all duration-700 ${
                         inView3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
@@ -93,15 +96,15 @@ export function StoreBuildForConversion() {
                     >
                         <path d="M59.705 171.352l2.603-20.82 49.335-16.39 4.652 37.21A87.893 87.893 0 0 1 88 176a87.893 87.893 0 0 1-28.295-4.648zM44.44 164.48C17.894 149.328 0 120.754 0 88 0 39.399 39.399 0 88 0s88 39.399 88 88c0 32.754-17.894 61.328-44.44 76.48L122 88h6V72h-8V40L88 20 56 40v32h-8v16h6zM105.875 88l2.882 23.05-43.318 14.433L70.125 88zM72 72V48.868l16-10 16 10V72z" fillRule="evenodd"/>
                     </svg>
-                    <h3 className="text-lg font-bold mb-2 text-white">Stores with upper Lighthouse threshold</h3>
-                    <p className="text-sm text-white">
+                    <h3 className="text-lg font-bold mb-2 text-white dark:text-black">Stores with upper Lighthouse threshold</h3>
+                    <p className="text-sm text-white dark:text-black">
                         We build lightning-fast marketing websites and e-commerce stores using the latest technology. Our sites consistently exceed Lighthouse thresholds and adapt to the latest SEO trends to outperform competitors.
                     </p>
                 </div>
 
                 <div
                     ref={ref4}
-                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                    className={`bg-transparent p-6 rounded-[15px] border border-white dark:border-black transform transition-all duration-700 ${
                         inView4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
@@ -119,15 +122,15 @@ export function StoreBuildForConversion() {
                             <path d="M3.095 3.095C4.429 1.76 6.426 1.25 9 1.25h6c2.574 0 4.57.51 5.905 1.845C22.24 4.429 22.75 6.426 22.75 9v6c0 2.574-.51 4.57-1.845 5.905C19.571 22.24 17.574 22.75 15 22.75H9c-2.574 0-4.57-.51-5.905-1.845C1.76 19.571 1.25 17.574 1.25 15V9c0-2.574.51-4.57 1.845-5.905zm1.06 1.06C3.24 5.071 2.75 6.574 2.75 9v6c0 2.426.49 3.93 1.405 4.845.916.915 2.419 1.405 4.845 1.405h6c2.426 0 3.93-.49 4.845-1.405.915-.916 1.405-2.419 1.405-4.845V9c0-2.426-.49-3.93-1.405-4.845C18.929 3.24 17.426 2.75 15 2.75H9c-2.426 0-3.93.49-4.845 1.405z" />
                         </g>
                     </svg>
-                    <h3 className="text-lg font-bold mb-2 text-white">Pixels, Analytics & Reporting</h3>
-                    <p className="text-sm text-white">
+                    <h3 className="text-lg font-bold mb-2 text-white dark:text-black">Pixels, Analytics & Reporting</h3>
+                    <p className="text-sm text-white dark:text-black">
                         Recognizing the crucial role of pixel and conversion tracking, we set up your e-commerce store with precise tracking and essential reporting to effectively scale and drive growth for your online business.
                     </p>
                 </div>
 
                 <div
                     ref={ref5}
-                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                    className={`bg-transparent p-6 rounded-[15px] border border-white dark:border-black transform transition-all duration-700 ${
                         inView5 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
@@ -142,8 +145,8 @@ export function StoreBuildForConversion() {
                     >
                         <path d="M853.333333 368.533333v390.229334c0 36.565333-28.650667 66.218667-64 66.218666H213.333333c-35.349333 0-64-29.653333-64-66.218666V368.533333h704z m-106.666666 44.16H256v263.04h490.666667v-263.04z m-64 66.474667v132.864H320v-132.864h362.666667zM789.333333 192c35.349333 0 64 29.653333 64 66.197333v44.138667H149.333333v-44.138667C149.333333 221.653333 177.984 192 213.333333 192h576z"/>
                     </svg>
-                    <h3 className="text-lg font-bold mb-2 text-white">Paid Campaign Management</h3>
-                    <p className="text-sm text-white">
+                    <h3 className="text-lg font-bold mb-2 text-white dark:text-black">Paid Campaign Management</h3>
+                    <p className="text-sm text-white dark:text-black">
                         Ready for seamless advertising management? We provide expert handling of Google Ads, YouTube campaigns, Meta, TikTok, Snapchat ads, and app promotions, delivering comprehensive and professional ad management for your business.
                     </p>
                 </div>

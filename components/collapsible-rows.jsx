@@ -1,6 +1,8 @@
-'use client'; // Ensures this component runs on the client side
+'use client'; 
 
 import { useState, useEffect } from 'react';
+import { dark } from 'daisyui/src/theming/themes';
+
 export default function CollapsibleRows() {
   // States for each dropdown
   const [isOpen1, setIsOpen1] = useState(false);
@@ -78,27 +80,29 @@ export default function CollapsibleRows() {
       <h2
                         className="text-white lg:text-5xl text-3xl font-bold lg:!leading-[56px] pb-1.5"
                         style={{
-                            backgroundImage: 'linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.6))',
-                            WebkitBackgroundClip: 'text',
-                            backgroundClip: 'text',  // Fallback for non-webkit browsers
-                            color: 'transparent'
-                        }}
+                          backgroundImage: dark
+                              ? 'linear-gradient(rgb(255 255 255), rgb(82, 79, 79), rgb(63 57 57 / 60%))'
+                              : 'linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.6))',
+                          WebkitBackgroundClip: 'text',
+                          backgroundClip: 'text',  // Fallback for non-webkit browsers
+                          color: 'transparent',
+                      }}
                     >
                         Digital Marketing/Ecommerce Agency in Abu Dhabi
                     </h2>
       <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
    <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen1 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen1 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown1}
           style={{ cursor: 'pointer' }}
         >
           <span>Official Shopify Partner in Abu Dhabi</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen1 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-4 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
-                  <li><div className="text-sm font-normal dropdown-item block text-left text-white">Located in Abu Dhabi, Vexa Marketing Agency is your go-to partner for Shopify website development and shopify e-commerce management. As Official Shopify partners since 2020, we bring extensive expertise to the table. Our mission is to support and grow online businesses by providing detailed Shopify website development, expert e-commerce consultation, and strategic growth management services in the ever-evolving e-commerce landscape.</div></li>
+                  <li><div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">Located in Abu Dhabi, Vexa Marketing Agency is your go-to partner for Shopify website development and shopify e-commerce management. As Official Shopify partners since 2020, we bring extensive expertise to the table. Our mission is to support and grow online businesses by providing detailed Shopify website development, expert e-commerce consultation, and strategic growth management services in the ever-evolving e-commerce landscape.</div></li>
                 </ul>
               </div>
             </div>
@@ -109,18 +113,18 @@ export default function CollapsibleRows() {
       {/* Second Dropdown */}
       <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
         <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen2 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen2 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown2}
           style={{ cursor: 'pointer' }}
         >
           <span>Top E-commerce Agency in Abu Dhabi</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen2 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-2 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
                 <li>
-  <div className="text-sm font-normal dropdown-item block text-left text-white">
+  <div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">
     As the most trusted provider of <em>Ecommerce Services in Abu Dhabi</em>, we specialize in elevating your online presence with a strategic and tailored approach. Our expert team delivers customized <em>ecommerce development in Abu Dhabi</em>  with advanced features designed to meet your unique business needs. Let us help you build a powerful and efficient ecommerce platform that drives success and growth in the competitive digital marketplace.
   </div>
 </li>
@@ -135,17 +139,17 @@ export default function CollapsibleRows() {
       {/* Third Dropdown */}
       <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
         <div 
-          className={`text-lg font-bold mb-8 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen3 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-8 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen3 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown3}
           style={{ cursor: 'pointer' }}
         >
           <span>GCC Ecommerce Setup in Abu Dhabi, UAE: Expert Onboarding Services</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen3 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-2 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
-                  <li><div className="text-sm font-normal dropdown-item block text-left text-white ">Expand your ecommerce business into the GCC market with our comprehensive <em> GCC ecommerce setup services in Abu Dhabi, UAE.</em> We provide everything from licensing and development to payment gateways, storage solutions, delivery systems, and marketing strategies. Our team specializes in helping European and UK manufacturers establish a strong digital presence through marketplace onboarding, inventory management, and targeted marketing, ensuring sustainable growth in the GCC.</div></li>
+                  <li><div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">Expand your ecommerce business into the GCC market with our comprehensive <em> GCC ecommerce setup services in Abu Dhabi, UAE.</em> We provide everything from licensing and development to payment gateways, storage solutions, delivery systems, and marketing strategies. Our team specializes in helping European and UK manufacturers establish a strong digital presence through marketplace onboarding, inventory management, and targeted marketing, ensuring sustainable growth in the GCC.</div></li>
                 </ul>
               </div>
             </div>
@@ -156,17 +160,17 @@ export default function CollapsibleRows() {
             {/* 4th Dropdown */}
             <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
         <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen4 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen4 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown4}
           style={{ cursor: 'pointer' }}
         >
           <span>Our Digital Strategies</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen4 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-2 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
-                  <li><div className="text-sm font-normal dropdown-item block text-left text-white">Vexa is one of the fastest growing digital marketing company in Abu dhabi. Renowned in the region for assisting businesses in Abu Dhabi to expand their reach, grow, and thrive at an affordable price.  Our team is made up of passionate digital enthusiasts and creative thinkers who are fully dedicated to helping our clients succeed.</div></li>
+                  <li><div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">Vexa is one of the fastest growing digital marketing company in Abu dhabi. Renowned in the region for assisting businesses in Abu Dhabi to expand their reach, grow, and thrive at an affordable price.  Our team is made up of passionate digital enthusiasts and creative thinkers who are fully dedicated to helping our clients succeed.</div></li>
                 </ul>
               </div>
             </div>

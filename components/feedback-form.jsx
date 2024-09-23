@@ -36,20 +36,21 @@ export function FeedbackForm() {
     };
 
     return (
-        <div className="w-full md:max-w-md">
-            <Card title="Leave Feedback">
+        <div className="w-full md:w-full md:max-w-full bg-transparent">
+            <Card title="Contact us">
                 <form
                     name="feedback"
                     method="POST"
                     data-netlify="true"
                     onSubmit={handleFormSubmit}
-                    className="text-black flex flex-col gap-3 align-center"
+                    className="text-black flex flex-col gap-3 align-center bg-transparent"
                 >
                     <input type="hidden" name="form-name" value="feedback" />
-                    <input name="name" type="text" placeholder="Name" required className="input input-bordered" />
-                    <input name="email" type="email" placeholder="Email (optional)" className="input input-bordered" />
-                    <textarea name="message" placeholder="Message" required className="input input-bordered"></textarea>
-                    <button className="btn btn-primary" type="submit" disabled={status === 'pending'}>
+                    <input name="name" type="text" placeholder="Name" required className="input input-bordered bg-transparent text-white placeholder-gray-400 border-white border border-white rounded-[15px]" />
+                    <input name="email" type="email" placeholder="Email (optional)" className="input input-bordered bg-transparent text-white placeholder-gray-400 border-white border border-white rounded-[15px]" />
+                    <input name="phone" type="tel" placeholder="Phone Number "  required className="input input-bordered bg-transparent text-white placeholder-gray-400 border-white border border-white rounded-[15px]" />
+                    <textarea name="message" placeholder="Message" required className="input input-bordered bg-transparent text-white placeholder-gray-400 border-white border border-white rounded-[15px]"></textarea>
+                    <button className="btn bg-[#35cbee] border border-white rounded-[15px]" type="submit" disabled={status === 'pending'}>
                         Submit
                     </button>
                     {status === 'ok' && (

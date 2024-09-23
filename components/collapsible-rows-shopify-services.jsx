@@ -1,6 +1,8 @@
 'use client'; // Ensures this component runs on the client side
 
 import { useState, useEffect } from 'react';
+import { dark } from 'daisyui/src/theming/themes';
+
 export default function CollapsibleRows() {
   // States for each dropdown
   const [isOpen1, setIsOpen1] = useState(false);
@@ -105,29 +107,31 @@ export default function CollapsibleRows() {
     <div className="space-y-4">
       {/* First Dropdown */}
       <h2
-                        className="text-white lg:text-5xl text-3xl font-bold lg:!leading-[56px] pb-1.5"
-                        style={{
-                            backgroundImage: 'linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.6))',
-                            WebkitBackgroundClip: 'text',
-                            backgroundClip: 'text',  // Fallback for non-webkit browsers
-                            color: 'transparent'
-                        }}
+                       className="text-white dark:text-black lg:text-5xl text-3xl font-bold lg:!leading-[56px]"
+                       style={{
+                         backgroundImage: dark
+                             ? 'linear-gradient(rgb(255 255 255), rgb(82, 79, 79), rgb(63 57 57 / 60%))'
+                             : 'linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.6))',
+                         WebkitBackgroundClip: 'text',
+                         backgroundClip: 'text',  // Fallback for non-webkit browsers
+                         color: 'transparent',
+                     }}
                     >
                         Shopify Partner Services
                     </h2>
       <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
    <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen1 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen1 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown1}
           style={{ cursor: 'pointer' }}
         >
           <span>UI/UX Development</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen1 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-4 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
-                  <li><div className="text-sm font-normal dropdown-item block text-left text-white">Enhance conversions with our skilled Shopify UI/UX developers. Engage visitors with intuitive interfaces, seamless navigation, and compelling visuals.</div></li>
+                  <li><div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">Enhance conversions with our skilled Shopify UI/UX developers. Engage visitors with intuitive interfaces, seamless navigation, and compelling visuals.</div></li>
                 </ul>
               </div>
             </div>
@@ -138,18 +142,18 @@ export default function CollapsibleRows() {
       {/* Second Dropdown */}
       <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
         <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen2 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen2 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown2}
           style={{ cursor: 'pointer' }}
         >
           <span>Store Revamp/Improvement</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen2 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-2 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
                 <li>
-  <div className="text-sm font-normal dropdown-item block text-left text-white">
+  <div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">
   Transform your Shopify store for an engaging online experience. Enhance brand identity, optimize user flow, and increase sales satisfaction.</div>
 </li>
 
@@ -163,17 +167,17 @@ export default function CollapsibleRows() {
       {/* Third Dropdown */}
       <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
         <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen3 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen3 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown3}
           style={{ cursor: 'pointer' }}
         >
           <span>Custom Store Development</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen3 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-2 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
-                  <li><div className="text-sm font-normal dropdown-item block text-left text-white ">From advanced features to seamless integrations tailored to your business needs, our expert developers deliver scalable solutions that drive growth and efficiency. Unlock your e-commerce potential with customized Shopify store solutions. Showcase your brand while enhancing performance with our Shopify expertise.</div></li>
+                  <li><div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">From advanced features to seamless integrations tailored to your business needs, our expert developers deliver scalable solutions that drive growth and efficiency. Unlock your e-commerce potential with customized Shopify store solutions. Showcase your brand while enhancing performance with our Shopify expertise.</div></li>
                 </ul>
               </div>
             </div>
@@ -184,17 +188,17 @@ export default function CollapsibleRows() {
             {/* 4th Dropdown */}
       <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
         <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen4 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen4 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown4}
           style={{ cursor: 'pointer' }}
         >
           <span>Theme Customization</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen4 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-2 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
-                  <li><div className="text-sm font-normal dropdown-item block text-left text-white">Vexa is one of the fastest growing digital marketing company in Abu dhabi. Renowned in the region for assisting businesses in Abu Dhabi to expand their reach, grow, and thrive at an affordable price.  Our team is made up of passionate digital enthusiasts and creative thinkers who are fully dedicated to helping our clients succeed.</div></li>
+                  <li><div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">Vexa is one of the fastest growing digital marketing company in Abu dhabi. Renowned in the region for assisting businesses in Abu Dhabi to expand their reach, grow, and thrive at an affordable price.  Our team is made up of passionate digital enthusiasts and creative thinkers who are fully dedicated to helping our clients succeed.</div></li>
                 </ul>
               </div>
             </div>
@@ -205,18 +209,18 @@ export default function CollapsibleRows() {
   {/* 5th Dropdown */}
   <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
         <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen5 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen5 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown5}
           style={{ cursor: 'pointer' }}
         >
           <span>App & Channel Integration</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen5 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-2 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
                 <li>
-                   <div className="text-sm font-normal dropdown-item block text-left text-white">
+                   <div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">
                    Expand the capabilities and reach of your Shopify store with seamless integration of third-party apps and sales channels.</div>
                 </li>
 
@@ -231,18 +235,18 @@ export default function CollapsibleRows() {
         {/* 6th Dropdown */}
   <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
         <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen6 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen6 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown6}
           style={{ cursor: 'pointer' }}
         >
           <span>Shipping/Tax/Payment Setup</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen6 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-2 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
                 <li>
-                   <div className="text-sm font-normal dropdown-item block text-left text-white">
+                   <div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">
                    Streamline Shopify store management and optimize checkout processes with expert setup of shipping, tax, and payment gateway options.</div>
                 </li>
 
@@ -256,18 +260,18 @@ export default function CollapsibleRows() {
         {/* 7th Dropdown */}
   <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
         <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen7 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen7 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown7}
           style={{ cursor: 'pointer' }}
         >
           <span>Website Migration</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen7 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-2 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
                 <li>
-                   <div className="text-sm font-normal dropdown-item block text-left text-white">
+                   <div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">
                    Effortlessly transition to Shopify with our comprehensive migration services. Includes data transfer, SEO optimization, and preserving site integrity and performance.</div>
                 </li>
 
@@ -281,18 +285,18 @@ export default function CollapsibleRows() {
         {/* 8th Dropdown */}
   <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
         <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen8 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen8 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown8}
           style={{ cursor: 'pointer' }}
         >
           <span>Bug Fixing/Troubleshooting</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen8 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-2 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
                 <li>
-                   <div className="text-sm font-normal dropdown-item block text-left text-white">
+                   <div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">
                    Swiftly resolve issues with our expert bug-fixing and troubleshooting services to minimize downtime and enhance customer satisfaction.</div>
                 </li>
 
@@ -306,18 +310,18 @@ export default function CollapsibleRows() {
        {/* 9th Dropdown */}
        <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
         <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen9 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen9 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown9}
           style={{ cursor: 'pointer' }}
         >
           <span>Responsive & Custom Coding</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen9 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-2 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
                 <li>
-                   <div className="text-sm font-normal dropdown-item block text-left text-white">
+                   <div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">
                    Optimize performance, usability, and accessibility with responsive website design and custom coding that drives engagement and conversions.</div>
                 </li>
 
@@ -332,18 +336,18 @@ export default function CollapsibleRows() {
        {/* 10th Dropdown */}
        <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
         <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen10 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen10 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown10}
           style={{ cursor: 'pointer' }}
         >
           <span>Wholesale/Dropshipping/B2B</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen10 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-2 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
                 <li>
-                   <div className="text-sm font-normal dropdown-item block text-left text-white">
+                   <div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black">
                    Expand market reach with Shopify solutions for wholesale, dropshipping, and B2B. Custom pricing and automated fulfillment support scaling success.</div>
                 </li>
 
@@ -357,18 +361,18 @@ export default function CollapsibleRows() {
        {/* 11th Dropdown */}
        <div className="relative bg-black/0 rounded-[15px] text-lg border border-white" style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}>
         <div 
-          className={`text-lg font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen11 ? 'h-auto' : 'h-[48px]'}`} 
+          className={`text-lg text-white dark:text-black font-bold mb-2 text-left w-full no-underline pl-4 sm:w-auto sm:pl-4 py-2 sm:py-1 ${isOpen11 ? 'h-auto' : 'h-[48px]'}`} 
           onClick={toggleDropdown11}
           style={{ cursor: 'pointer' }}
         >
           <span>Custom Product/Landing Page</span>
           <span className="ml-2">&#9662;</span> {/* Down arrow */}
           {isOpen11 && (
-            <div className="mt-2 w-full bg-black/0 shadow-lg">
+            <div className="mt-2 w-full bg-black/0 ">
               <div className="px-2 pt-2 pb-4 bg-black/0 h-auto flex flex-col justify-center">
                 <ul className="space-y-2">
                 <li>
-                   <div className="text-sm font-normal dropdown-item block text-left text-white">
+                   <div className="text-sm font-normal dropdown-item block text-left text-white dark:text-black can">
                    Showcase your products with compelling custom product page designs that highlight offerings with engaging visuals and persuasive content.</div>
                 </li>
 

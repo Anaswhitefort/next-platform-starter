@@ -16,13 +16,13 @@ export function MarketingMainCards() {
                 {/* Card 1 */}
                 <div
                     ref={ref1}
-                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                    className={`bg-transparent  dark:border-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
                         inView1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
                 >
-                    <h3 className="text-lg font-bold mb-2 text-white">Digital Marketing</h3>
-                    <p className="text-sm text-white">
+                    <h3 className="text-lg font-bold mb-2 text-white dark:text-black">Digital Marketing</h3>
+                    <p className="text-sm text-white dark:text-black">
                         Specialized in Lead and Sales oriented digital marketing strategies. Tailored to your business expansion goals, we offer services that seamlessly integrate with your objectives. Through a strategy-first methodology, our experts discern the optimal approach that harmonizes with your business aspirations.
                     </p>
                 </div>
@@ -30,13 +30,13 @@ export function MarketingMainCards() {
                 {/* Card 2 */}
                 <div
                     ref={ref2}
-                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                    className={`bg-transparent p-6 rounded-[15px] dark:border-black border border-white transform transition-all duration-700 ${
                         inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
                 >
-                    <h3 className="text-lg font-bold mb-2 text-white">Web/app Designing & Development</h3>
-                    <p className="text-sm text-white">
+                    <h3 className="text-lg font-bold mb-2 text-white dark:text-black">Web/app Designing & Development</h3>
+                    <p className="text-sm text-white dark:text-black">
                         Our crafted websites fuel conversions, meticulously enhancing user experience to cater to the clients satisfaction. Serving as a pivotal initial interaction for potential leads, the ease of navigation and engagement on your website could spell the distinction between success and setback.
                     </p>
                 </div>
@@ -44,13 +44,13 @@ export function MarketingMainCards() {
                 {/* Card 3 */}
                 <div
                     ref={ref3}
-                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                    className={`bg-transparent p-6 rounded-[15px] dark:border-black border border-white transform transition-all duration-700 ${
                         inView3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
                 >
-                    <h3 className="text-lg font-bold mb-2 text-white">GCC E-commerce Onboarding</h3>
-                    <p className="text-sm text-white">
+                    <h3 className="text-lg font-bold mb-2 text-white dark:text-black">GCC E-commerce Onboarding</h3>
+                    <p className="text-sm text-white dark:text-black">
                         Expand your business into the GCC market with our expert support. Based in Abu Dhabi, we assist European and UK manufacturers in establishing a strong presence through e-commerce development, marketplace onboarding, inventory management, and targeted marketing for sustainable growth.
                     </p>
                 </div>
@@ -58,13 +58,13 @@ export function MarketingMainCards() {
                 {/* Card 4 */}
                 <div
                     ref={ref4}
-                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                    className={`bg-transparent p-6 rounded-[15px] dark:border-black border border-white transform transition-all duration-700 ${
                         inView4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
                 >
-                    <h3 className="text-lg font-bold mb-2 text-white">Content Creation & Graphic Designing</h3>
-                    <p className="text-sm text-white">
+                    <h3 className="text-lg font-bold mb-2 text-white dark:text-black">Content Creation & Graphic Designing</h3>
+                    <p className="text-sm text-white dark:text-black">
                         Specialized in Lead and Sales oriented digital marketing strategies. Tailored to your business expansion goals, we offer services that seamlessly integrate with your objectives. Through a strategy-first methodology, our experts discern the optimal approach that harmonizes with your business aspirations.
                     </p>
                 </div>

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import { dark } from 'daisyui/src/theming/themes';
 
 export function OfficialShopifyPartner() {
     const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -14,28 +15,30 @@ export function OfficialShopifyPartner() {
         <div className="font-sans">
            <div
                 ref={ref1}
-                className={`grid lg:grid-cols-2 items-center lg:gap-y-6 bg-black transform transition-all duration-700 ${
+                className={`grid lg:grid-cols-2 items-center lg:gap-y-6 bg-transparent transform transition-all duration-700 ${
                     inView1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
             >
                 <div className="max-lg:order-1 max-lg:text-left sm:p-12 p-4">
                     <h2
-                        className="bg-blend-lighten md:bg-blend-darken text-white lg:text-5xl text-3xl font-bold lg:!leading-[56px]"
+                        className="text-white lg:text-5xl text-3xl font-bold lg:!leading-[56px]"
                         style={{
-                            backgroundImage: 'linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.6))',
-                            WebkitBackgroundClip: 'text',
-                            backgroundClip: 'text', // Fallback for non-webkit browsers
-                            color: 'transparent'
-                        }}
+                          backgroundImage: dark
+                              ? 'linear-gradient(to bottom, #000, #524f4f, rgba(255, 255, 255, 0.6))'
+                              : 'linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.6))',
+                          WebkitBackgroundClip: 'text',
+                          backgroundClip: 'text',  // Fallback for non-webkit browsers
+                          color: 'transparent',
+                      }}
                     >
                         We are Official Shopify Partner in Abu Dhabi
                     </h2>
-                    <p className="text-white mt-6 text-base leading-relaxed">
+                    <p className="text-white dark:text-black mt-6 text-base leading-relaxed">
                         As an official Shopify Partner in Abu Dhabi, we specialize in comprehensive store development and digital marketing support. Since 2020, we have been dedicated to helping businesses succeed online with expert Shopify solutions.
                     </p>
                     <button
                         type='button'
-                        className="bg-transparent border-2 border-white mt-12 transition-all text-white font-bold text-sm rounded-[10px] px-6 py-2.5"
+                        className="bg-transparent border-2 border-white mt-12 transition-all text-white dark:text-black dark:border-black font-bold text-sm rounded-[10px] px-6 py-2.5"
                     >
                         Read More
                     </button>
@@ -53,7 +56,7 @@ export function OfficialShopifyPartner() {
             <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 px-4 my-12">
             <div
                     ref={ref2}
-                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                    className={`bg-transparent p-6 rounded-[15px] border border-white dark:border-black transform transition-all duration-700 ${
                         inView2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
@@ -76,15 +79,15 @@ export function OfficialShopifyPartner() {
                             clipRule="evenodd"
                         />
                     </svg>
-                    <h3 className="text-lg font-bold mb-2 text-white">Custom Store Setup & Customization</h3>
-                    <p className="text-sm text-white">
+                    <h3 className="text-lg font-bold mb-2 text-white  dark:text-black">Custom Store Setup & Customization</h3>
+                    <p className="text-sm text-white  dark:text-black">
                         Experienced Shopify developer in Abu Dhabi offering tailored store setup, theme customization, and seamless user experience for your brand.
                     </p>
                 </div>
 
                 <div
                     ref={ref3}
-                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                    className={`bg-transparent p-6 rounded-[15px] border border-white dark:border-black transform transition-all duration-700 ${
                         inView3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
@@ -98,15 +101,15 @@ export function OfficialShopifyPartner() {
                     >
                         <path d="M896 554.666667v170.666666a85.333333 85.333333 0 0 1-85.333333 85.333334v42.666666a128 128 0 0 1-128 128h-128a42.666667 42.666667 0 0 1-42.666667-42.666666v-21.333334a21.333333 21.333333 0 0 1 21.333333-21.333333H682.666667a42.666667 42.666667 0 0 0 42.666666-42.666667v-42.666666a42.666667 42.666667 0 0 1-42.666666-42.666667v-256a42.666667 42.666667 0 0 1 42.666666-42.666667V341.333333A213.333333 213.333333 0 0 0 298.666667 341.333333v128a42.666667 42.666667 0 0 1 42.666666 42.666667v256a42.666667 42.666667 0 0 1-42.666666 42.666667H213.333333a85.333333 85.333333 0 0 1-85.333333-85.333334v-170.666666a85.333333 85.333333 0 0 1 85.333333-85.333334V341.333333a298.666667 298.666667 0 0 1 597.333334 0v128a85.333333 85.333333 0 0 1 85.333333 85.333334z" />
                     </svg>
-                    <h3 className="text-lg font-bold mb-2 text-white">Theme Support</h3>
-                    <p className="text-sm text-white">
+                    <h3 className="text-lg font-bold mb-2 text-white dark:text-black">Theme Support</h3>
+                    <p className="text-sm text-white dark:text-black">
                         We offer expert theme support and customization to ensure your store perfectly aligns with your brand identity. From modifying existing themes to creating custom layouts, we enhance both functionality and aesthetics.
                     </p>
                 </div>
 
                 <div
                     ref={ref4}
-                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                    className={`bg-transparent p-6 rounded-[15px] border border-white dark:border-black transform transition-all duration-700 ${
                         inView4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
@@ -137,15 +140,15 @@ export function OfficialShopifyPartner() {
                             <path d="M178 271.894 233.894 216 334 316.105" />
                         </g>
                     </svg>
-                    <h3 className="text-lg font-bold mb-2 text-white">Secure Lightning Fast Store</h3>
-                    <p className="text-sm text-white">
+                    <h3 className="text-lg font-bold mb-2 text-white dark:text-black">Secure Lightning Fast Store</h3>
+                    <p className="text-sm text-white dark:text-black">
                         We offer a Secure and Lightning Fast Store that combines rapid delivery with robust protection. We prioritize your security while ensuring that you receive your orders swiftly and store efficiently.
                     </p>
                 </div>
 
                 <div
                     ref={ref5}
-                    className={`bg-black p-6 rounded-[15px] border border-white transform transition-all duration-700 ${
+                    className={`bg-transparent p-6 rounded-[15px] border border-white dark:border-black transform transition-all duration-700 ${
                         inView5 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                     style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
@@ -163,8 +166,8 @@ export function OfficialShopifyPartner() {
                             <path d="M3.095 3.095C4.429 1.76 6.426 1.25 9 1.25h6c2.574 0 4.57.51 5.905 1.845C22.24 4.429 22.75 6.426 22.75 9v6c0 2.574-.51 4.57-1.845 5.905C19.571 22.24 17.574 22.75 15 22.75H9c-2.574 0-4.57-.51-5.905-1.845C1.76 19.571 1.25 17.574 1.25 15V9c0-2.574.51-4.57 1.845-5.905zm1.06 1.06C3.24 5.071 2.75 6.574 2.75 9v6c0 2.426.49 3.93 1.405 4.845.916.915 2.419 1.405 4.845 1.405h6c2.426 0 3.93-.49 4.845-1.405.915-.916 1.405-2.419 1.405-4.845V9c0-2.426-.49-3.93-1.405-4.845C18.929 3.24 17.426 2.75 15 2.75H9c-2.426 0-3.93.49-4.845 1.405z" />
                         </g>
                     </svg>
-                    <h3 className="text-lg font-bold mb-2 text-white">Marketing Support</h3>
-                    <p className="text-sm text-white">
+                    <h3 className="text-lg font-bold mb-2 text-white dark:text-black">Marketing Support</h3>
+                    <p className="text-sm text-white dark:text-black">
                         Comprehensive Shopify store marketing support designed to elevate your online presence and maximize your business potential. Our services include targeted strategies to drive traffic, optimize conversions, and increase sales.
                     </p>
                 </div>
