@@ -1,8 +1,7 @@
 import Image from 'next/image';
-import { Markdown } from 'components/markdown';
 import { getNetlifyContext } from 'utils';
-import { ImageWithSizeOverlay } from './image-with-size-overlay';
 import { Card } from 'components/card';
+import CustomizedAccordions from 'components/collapsible-rows-ihealth';
 
 export const metadata = {
     title: 'Image CDN'
@@ -25,85 +24,71 @@ When running on Netlify, \`next/image\` is automatically set-up to use Netlify I
 import Image from 'next/image';
 
 // In your component
-<Image src="/images/corgi.jpg" alt="Corgi" /* ... additional props */ />
+<Image src="/images/i-health-uae-by-vexa.png" alt="Creative 01 from vexa digital marketing agency abu dhabi" /* ... additional props */ />
 ~~~
 `;
-const creativeContents = `Ecommerce Marketing
+const ecommerceMarketing01 = `Ecommerce Marketing - iHealth UAE
 
 `;
 
-const originalVsCdnSnippet = `
-In the code below, a regular \`<img>\` tag is used in both cases for a framework-agnostic example. 
-Other than using \`next/image\` or rolling your own \`<img>\` tags, you can also use the excellent [unpic-img](https://unpic.pics/).
-
-~~~jsx
-// <== On the left, the original image
-<img src="/images/corgi.jpg" alt="Corgi" />
-
-// ==> On the right, explicitly using Netlify Image CDN endpoint for a responsive image
-<img 
-  srcSet="/.netlify/images?url=images/corgi.jpg&w=640 640w, /.netlify/images?url=images/corgi.jpg&w=1280 1280w, /.netlify/images?url=images/corgi.jpg&w=2048 2048w"
-  sizes="(max-width: 1024px) 100vw, 1024px" 
-  alt="Corgi" 
-/>
-~~~
-`;
-
-const devModeWarning = `
-In local development, optimization is performed locally without automatic format
-detection, so format is set to WebP.
-`;
 
 export default function Page() {
     return (
         <div className="flex flex-col gap-6 sm:gap-12">
             <section>
 
-                <section className="flex flex-col gap-4">
-                    <div className="mt-8"> 
-                    <Card title={creativeContents} text="Specialised in Lead and Sales oriented digital marketing strategies. Tailored to your business expansion goals, we offer Services that seamlessly integrate with your objectives. Through a strategy-first methodology, our experts discern the optimal approach that harmonizes with your business aspirations." />
-                    </div>
-                </section>
-
+                <div
+                className={`bg-transparent p-6 rounded-[15px] border border-white dark:border-black transform transition-all duration-700 opacity-100 translate-y-0 opacity-0 translate-y-10
+                }`}
+                style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
+                >
+                <h3 className="text-lg font-bold mb-2 text-white dark:text-black">{ecommerceMarketing01}</h3>
+                <p className="text-sm text-white dark:text-black">
+                In 2022-2023, Vexa Advertising created the brand new eCommerce platform into the GCC marketing bringing in 1 million AED in sales within couple of months. Our team put together a smart strategy, ran targeted campaigns, and made sure the content hit the mark. We're all about getting real results and driving growth for our clients.
+                </p>
+                </div>
                 
                 <div className="mt-20 overflow-hidden border-2 border-white rounded-lg relative max-w-screen-lg"
                     style={{ aspectRatio: '3/1.6' }}>
 
                     <Image
-                        src="/images/Creatives-01_from_vexa_digital_marketing_agency_abu_dhabi.jpg"
+                        src="/images/i-health-uae-by-vexa.png"
                         priority
                         fill={true}
-                        style={{ objectFit: 'contain' }}
+                        style={{ objectFit: 'fill' }}
                         sizes="(max-width: 1024px) 100vw, 1024px"
                         alt="Creative 01 from vexa digital marketing agency abu dhabi"
                     />
     
                 </div>
             </section>
-
-            <section>
-                <h2 className="mb-4 text-2xl font-bold sm:text-3xl">
-                    Original vs. optimized image: can you tell the difference?
-                </h2>
-                <Markdown content={originalVsCdnSnippet} />
-                <div className="diff aspect-[3/2] rounded-lg border-2 border-white mt-8">
-                    <div className="diff-item-1">
-                        <div>
-                            <ImageWithSizeOverlay
-                                srcSet={sampleImageSrcSet}
-                                sizes={sampleImageSrcSet}
-                                overlayPosition="right"
-                            />
-                        </div>
-                    </div>
-                    <div className="diff-item-2">
-                        <div>
-                            <ImageWithSizeOverlay src="/images/corgi.jpg" />
-                        </div>
-                    </div>
-                    <div className="diff-resizer"></div>
-                </div>
+            <section className="my-12">
+                    <CustomizedAccordions />
             </section>
+
+            <div
+                className={`bg-transparent p-6 rounded-[15px] border border-white dark:border-black transform transition-all duration-700 opacity-100 translate-y-0 opacity-0 translate-y-10
+                }`}
+                style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
+                >
+            <h3 className="text-lg font-bold mb-2 text-white dark:text-black">{ecommerceMarketing01}</h3>
+            <div className="mt-10 overflow-hidden border-2 border-white rounded-lg relative max-w-screen-lg"
+                    style={{ aspectRatio: '3/1.6' }}>
+
+                    <Image
+                        src="/images/ihealth-sales-by-vexa.png"
+                        priority
+                        fill={true}
+                        style={{ objectFit: 'fill' }}
+                        sizes="(max-width: 1024px) 100vw, 1024px"
+                        alt="Creative 01 from vexa digital marketing agency abu dhabi"
+                    />
+    
+                </div>
+
+            </div>
+
+        
         </div>
     );
 }

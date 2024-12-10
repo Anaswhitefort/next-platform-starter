@@ -210,35 +210,40 @@ export function Header() {
                 </a>
 
                 <ul className="nav-menu flex flex-wrap gap-x-4 gap-y-1 lg:flex lg:items-center lg:gap-2 hidden lg:flex">
-                    {navItems.map((item, index) => (
-                        <li key={index} className="nav-item relative">
-                            <Link
-                                href={item.href}
-                                className="inline-block px-1.5 py-1 transition hover:opacity-80 sm:px-3 sm:py-2 text-lg font-bold h-6 no-underline"
-                                onClick={(event) => toggleSubMenu(index, event)} // Toggle submenu on click if exists
-                            >
-                                {item.linkText}
-                            </Link>
+    {navItems.map((item, index) => (
+        <li
+            key={index}
+            className="nav-item relative"
+            onMouseEnter={() => setShowSubMenu(index)} // Show submenu on hover
+            onMouseLeave={() => setShowSubMenu(null)} // Hide submenu when no longer hovering
+        >
+            <Link
+                href={item.href}
+                className="inline-block px-1.5 py-1 transition hover:opacity-80 sm:px-3 sm:py-2 text-lg font-bold h-6 no-underline"
+            >
+                {item.linkText}
+            </Link>
 
-                            {/* Render submenu */}
-                            {item.subItems && showSubMenu === index && (
-                                <div className="submenu absolute left-0 top-full bg-black text-white rounded-[8px] shadow-lg p-4">
-                                    {item.subItems.map((subItem, subIndex) => (
-                                        <Link
-                                            key={subIndex}
-                                            href={subItem.href}
-                                            className="block px-2 py-1 rounded-[15px] border border-white no-underline"
-                                            style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
-                                            onClick={() => setMenuOpen(false)} // Close menu after clicking on submenu
-                                        >
-                                            {subItem.linkText}
-                                        </Link>
-                                    ))}
-                                </div>
-                            )}
-                        </li>
+            {/* Render submenu */}
+            {item.subItems && showSubMenu === index && (
+                <div className="submenu absolute left-0 top-full dark:bg-white dark:text-black bg-black text-white rounded-[8px] shadow-lg p-4">
+                    {item.subItems.map((subItem, subIndex) => (
+                        <Link
+                            key={subIndex}
+                            href={subItem.href}
+                            className="block px-2 py-1 rounded-[15px] border border-white dark:border-black no-underline"
+                            style={{ boxShadow: '4px 6px 0px 4px #35cbee' }}
+                            onClick={() => setMenuOpen(false)} // Close menu after clicking on submenu
+                        >
+                            {subItem.linkText}
+                        </Link>
                     ))}
-                </ul>
+                </div>
+            )}
+        </li>
+    ))}
+</ul>
+
             </nav>
 
             <div ref={overlayRef} className={`overlay bg-grid-pattern dark:bg-white  ${menuOpen ? 'open' : ''}`}>

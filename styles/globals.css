@@ -44,7 +44,7 @@ a {
 
 @layer components {
     .dark .btn {
-        @apply bg-gray-700 text-white;
+        @apply bg-[#35cbee] text-white;
     }
 }
 

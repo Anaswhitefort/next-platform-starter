@@ -48,7 +48,7 @@ export function OfficialShopifyPartner() {
                     <img
                         src="/images/Official_shopify_partner_abu_dhabi.png"
                         className="w-full h-full object-cover border-white rounded-[15px]"
-                        alt="Dining Experience"
+                        alt="Vexa Official Shopify Partner"
                     />
                 </div>
             </div>
