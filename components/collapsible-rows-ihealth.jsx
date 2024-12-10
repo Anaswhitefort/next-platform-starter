@@ -58,50 +58,58 @@ export default function CollapsibleRows() {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Official Shopify Partner in Abu Dhabi",
+          "name": "What is the Achievement Summary?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Located in Abu Dhabi, Vexa Marketing Agency is your go-to partner for Shopify website development and shopify e-commerce management. As Official Shopify partners since 2020, we bring extensive expertise to the table. Our mission is to support and grow online businesses by providing detailed Shopify website development, expert e-commerce consultation, and strategic growth management services in the ever-evolving e-commerce landscape."
+            "text": "In 2022-2023, we successfully generated 1 million AED in sales for the brand new eCommerce."
           }
         },
         {
           "@type": "Question",
-          "name": "The Leading Ecommerce Service in Abu Dhabi",
+          "name": "What was your role in this achievement?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "As the most trusted provider of Ecommerce Services in Abu Dhabi, we specialize in elevating your online presence with a strategic and tailored approach. Our expert team delivers customized ecommerce development in Abu Dhabi with advanced features designed to meet your unique business needs. Let us help you build a powerful and efficient ecommerce platform that drives success and growth in the competitive digital marketplace."
+            "text": "Our role included Ecommerce Development, Marketing Strategy, Paid Ads, and SEO."
           }
         },
         {
           "@type": "Question",
-          "name": "GCC Ecommerce Setup in Abu Dhabi, UAE: Expert Onboarding Services",
+          "name": "What was the main objective?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Expand your ecommerce business into the GCC market with our comprehensive GCC ecommerce setup services in Abu Dhabi, UAE. We provide everything from licensing and development to payment gateways, storage solutions, delivery systems, and marketing strategies. Our team specializes in helping European and UK manufacturers establish a strong digital presence through marketplace onboarding, inventory management, and targeted marketing, ensuring sustainable growth in the GCC."
+            "text": "Our objective was to get the best return on investment with minimal ad spend for eCommerce. We focused on smart strategies, targeting the right audience, and making every advertising dollar count to boost profits while keeping costs down."
           }
         },
         {
           "@type": "Question",
-          "name": "Dropdown 4",
+          "name": "What was the duration of this project?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "First"
+            "text": "The project duration was from 2022 to 2024."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What tools were used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We used Ads Manager (Google, Meta, TikTok), Gtag, and Shopify for this project."
           }
         }
       ]
     };
-
+  
     // Injecting the FAQ schema in the head of the document
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.innerHTML = JSON.stringify(schemaData);
     document.head.appendChild(script);
-
+  
     return () => {
       document.head.removeChild(script);
     };
   }, []);
-
+  
   return (
     <div className="space-y-4">
       {/* First Dropdown */}
