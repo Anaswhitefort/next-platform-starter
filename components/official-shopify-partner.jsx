@@ -21,15 +21,7 @@ export function OfficialShopifyPartner() {
             >
                 <div className="max-lg:order-1 max-lg:text-left sm:p-12 p-4">
                     <h2
-                        className="text-white lg:text-5xl text-3xl font-bold lg:!leading-[56px]"
-                        style={{
-                          backgroundImage: dark
-                              ? 'linear-gradient(to bottom, #000, #524f4f, rgba(255, 255, 255, 0.6))'
-                              : 'linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.6))',
-                          WebkitBackgroundClip: 'text',
-                          backgroundClip: 'text',  // Fallback for non-webkit browsers
-                          color: 'transparent',
-                      }}
+                        className="text-white dark:text-black lg:text-5xl text-3xl font-bold lg:!leading-[56px]"
                     >
                         We are Official Shopify Partner in Abu Dhabi
                     </h2>

@@ -78,15 +78,7 @@ export default function CollapsibleRows() {
     <div className="space-y-4">
       {/* First Dropdown */}
       <h2
-                        className="text-white lg:text-5xl text-3xl font-bold lg:!leading-[56px] pb-1.5"
-                        style={{
-                          backgroundImage: dark
-                              ? 'linear-gradient(rgb(255 255 255), rgb(82, 79, 79), rgb(63 57 57 / 60%))'
-                              : 'linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.6))',
-                          WebkitBackgroundClip: 'text',
-                          backgroundClip: 'text',  // Fallback for non-webkit browsers
-                          color: 'transparent',
-                      }}
+                        className="text-white dark:text-black lg:text-5xl text-3xl font-bold lg:!leading-[56px] pb-1.5"
                     >
                         Digital Marketing/Ecommerce Agency in Abu Dhabi
                     </h2>
