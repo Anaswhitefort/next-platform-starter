@@ -51,8 +51,8 @@ module.exports = {
           '77.7%': {
             transform: 'skewX(-50.0deg) skewY(0deg)',
           },
-          '88.8%': {
-            transform: 'skewX(0.0deg) skewY(0deg)',
+          '83.8%': {
+            transform: 'skewX(50.0deg) skewY(0deg)',
           },
         },
       },

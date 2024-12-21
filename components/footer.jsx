@@ -13,7 +13,7 @@ export function Footer() {
                         <Link href="/">
                             <Image src={vexaLogo} alt="Vexa Marketing Agency Abu Dhabi logo" />
                         </Link>
-                        <p className="py-8 text-sm text-white dark:text-black lg:max-w-xs text-left">We are a team of creative content creators, marketers, graphic designers and developers. Assisting the online growth of small and medium-sized businesses based in Abu Dhabi</p>
+                        <p className="py-8 text-sm text-white dark:text-black lg:max-w-xs text-left">We are a team of Shopify developers, creative content creators, marketers, graphic designers and developers. Assisting the online growth of small and medium-sized businesses based in Abu Dhabi and UAE</p>
                         <a href="javascript:;" className="py-2.5 px-5 h-9 block w-fit no-underline bg-[#35cbee] rounded-lg shadow-sm text-xs text-white mx-auto transition-all duration-500 hover:bg-black lg:mx-0">
                             Contact us
                         </a>

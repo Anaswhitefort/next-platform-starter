@@ -36,21 +36,21 @@ export function FeedbackForm() {
     };
 
     return (
-        <div className="w-full md:w-full md:max-w-full bg-transparent">
-            <Card title="Contact us">
+        <div className="w-full md:w-full md:max-w-full ">
+           
                 <form
                     name="feedback"
                     method="POST"
                     data-netlify="true"
                     onSubmit={handleFormSubmit}
-                    className="text-white flex flex-col gap-3 align-center bg-transparent"
-                >
+                    className="text-black flex flex-col gap-3 align-center bg-transparent"
+                ><h1 className='text-3xl text-white dark:text-black'>Contact us</h1>
                     <input type="hidden" name="form-name" value="feedback" />
-                    <input name="name" type="text" placeholder="Name" required className="input input-bordered bg-transparent text-white placeholder-white border-white rounded-[15px]" />
-                    <input name="email" type="email" placeholder="Email (optional)" className="input input-bordered bg-transparent text-white placeholder-white border-white  rounded-[15px]" />
-                    <input name="phone" type="tel" placeholder="Phone Number "  required className="input input-bordered bg-transparent text-white placeholder-white border-white rounded-[15px]" />
-                    <textarea name="message" placeholder="Message" required className="input input-bordered bg-transparent text-white placeholder-white border-white rounded-[15px]"></textarea>
-                    <button className="btn bg-[#35cbee] border border-white rounded-[15px]" type="submit" disabled={status === 'pending'}>
+                    <input name="name" type="text" placeholder="Name" required className="input input-bordered bg-transparent text-white placeholder-white border-white dark:text-black dark:placeholder-black dark:border-black rounded-[15px]" />
+                    <input name="email" type="email" placeholder="Email (optional)" className="input input-bordered bg-transparent  text-white placeholder-white border-white dark:text-black dark:placeholder-black dark:border-black   rounded-[15px]" />
+                    <input name="phone" type="tel" placeholder="Phone Number "  required className="input input-bordered bg-transparent  text-white placeholder-white border-white dark:text-black dark:placeholder-black dark:border-black  rounded-[15px]" />
+                    <textarea name="message" placeholder="Message" required className="input input-bordered bg-transparent  text-white placeholder-white border-white dark:text-black dark:placeholder-black dark:border-black  rounded-[15px]"></textarea>
+                    <button className="btn bg-[#35cbee]  border-white dark:border-black dark:text-black text-white rounded-[15px]" type="submit" disabled={status === 'pending'}>
                         Submit
                     </button>
                     {status === 'ok' && (
@@ -66,7 +66,7 @@ export function FeedbackForm() {
                         </div>
                     )}
                 </form>
-            </Card>
+          
         </div>
     );
 }
